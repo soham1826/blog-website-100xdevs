@@ -6,3 +6,26 @@ npm run dev
 ```
 npm run deploy
 ```
+
+You will need to add wrangler.toml file
+
+name = "blog-website"
+compatibility_date = "2023-12-01"
+
+ [vars]
+ DATABASE_URL="your prisma accelerate URL"
+
+ JWT_SECRET = "random secret"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
