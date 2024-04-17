@@ -5,11 +5,15 @@ import { useGetBlog } from "../hooks";
 
 const Blog = () => {
   const{id} = useParams();
+  let newID = "23";
+  if(id){
+    newID = id;
+  }
   const{loading, blog} = useGetBlog({
-    id:id
+    id:parseInt(newID)
   })
 
-  if(loading){
+  if(loading || !blog){
     return <div>loading...</div>
   }
   return (
